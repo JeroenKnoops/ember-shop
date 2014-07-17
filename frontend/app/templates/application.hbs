@@ -13,10 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#about">About</a>
-        </li>
-        <li><a href="#services">Services</a>
-        </li>
+        <li>{{#link-to 'about'}}About{{/link-to}}</li>
+        <li>{{#link-to 'products'}}Products{{/link-to}}</li>
         <li><a href="#contact">Contact</a>
         </li>
       </ul>
@@ -28,15 +26,11 @@
 
 <div class="container">
   {{outlet}}
-
-
 </div>
 <!-- /.container -->
 
 <div class="container">
-
   <hr>
-
   <footer>
     <div class="row">
       <div class="col-lg-12">
@@ -45,6 +39,5 @@
       </div>
     </div>
   </footer>
-
 </div>
 <!-- /.container -->
