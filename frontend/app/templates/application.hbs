@@ -13,10 +13,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-ex1-collapse">
       <ul class="nav navbar-nav">
-        <li>{{#link-to 'about'}}About{{/link-to}}</li>
-        <li>{{#link-to 'products'}}Products{{/link-to}}</li>
-        <li><a href="#contact">Contact</a>
-        </li>
+        {{#link-to 'about' tagName='li'}}<a href='#'>About</a>{{/link-to}}
+        {{#link-to 'products' tagName='li'}}<a href='#'>Products</a>{{/link-to}}
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <!-- /.navbar-collapse -->
