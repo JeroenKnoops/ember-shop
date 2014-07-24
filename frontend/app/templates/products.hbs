@@ -50,7 +50,8 @@
           <img src="http://placehold.it/320x150" alt="">
           <div class="caption">
             <h4 class="pull-right">{{price}}</h4>
-            <h4><a href="#">{{title}}</a>
+            <h4>{{#link-to 'product' this}}{{title}}
+              {{/link-to}}
             </h4>
             <p>{{description}}</p>
           </div>
