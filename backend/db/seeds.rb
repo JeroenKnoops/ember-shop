@@ -9,6 +9,9 @@ Product.destroy_all
 
 100.times do
   Product.create do |product|
-    product.title = Faker::Lorem.word
+    product.title = Faker::Commerce.product_name
+    product.description = Faker::Lorem.paragraph
+    product.price = Faker::Commerce.price
+    product.image_url = Faker::Lorem.word
   end
 end
