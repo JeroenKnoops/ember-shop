@@ -4,9 +4,11 @@ var Product = DS.Model.extend({
   title: DS.attr(),
   description: DS.attr(),
   price: DS.attr(),
-  number_of_reviews: DS.attr(),
+  numberOfReviews: function() {
+    return this.get('_data.reviews.length')
+  }.property('reviews.length'),
   stars: DS.attr(),
-  image_url: DS.attr(),
+  imageUrl: DS.attr(),
   reviews: DS.hasMany('review', { async: true })
 });
 
