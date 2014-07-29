@@ -6,7 +6,8 @@ var Product = DS.Model.extend({
   price: DS.attr(),
   number_of_reviews: DS.attr(),
   stars: DS.attr(),
-  image_url: DS.attr()
+  image_url: DS.attr(),
+  reviews: DS.hasMany('review', { async: true })
 });
 
 Product.reopenClass({

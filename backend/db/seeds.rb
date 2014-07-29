@@ -13,5 +13,13 @@ Product.destroy_all
     product.description = Faker::Lorem.paragraph
     product.price = Faker::Commerce.price
     product.image_url = Faker::Lorem.word
+    rand(1..10).times do
+      product.reviews << Review.new.tap do |review|
+        review.description = Faker::Lorem.paragraph
+        review.rating = rand(0..5)
+        review.user = Faker::Name.name
+        review.created_at = rand(1..10).days.ago
+      end
+    end
   end
 end

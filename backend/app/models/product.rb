@@ -1,7 +1,9 @@
 class Product < ActiveRecord::Base
 
+  has_many :reviews, dependent: :destroy
+
   def number_of_reviews
-    5
+    reviews.count
   end
 
   def stars

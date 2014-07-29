@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140724171626) do
+ActiveRecord::Schema.define(version: 20140729200117) do
 
   create_table "products", force: true do |t|
     t.string   "title"
@@ -21,5 +21,16 @@ ActiveRecord::Schema.define(version: 20140724171626) do
     t.float    "price"
     t.string   "image_url"
   end
+
+  create_table "reviews", force: true do |t|
+    t.string   "description", limit: 256
+    t.integer  "rating"
+    t.string   "user"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["product_id"], name: "index_reviews_on_product_id"
 
 end
