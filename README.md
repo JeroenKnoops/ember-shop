@@ -1,14 +1,32 @@
 ## Shop
 
-This is a Ember application showing shop items retrieved from a Rails backend.
+This is an Ember application showing shop items retrieved from a Rails backend.
 
 ## Requirements
 
 
 ### External Deps
 
+* [Ruby](https://www.ruby-lang.org) (if you're on OS X, you should consider using a version manager such as [RVM](http://rvm.io/) or [rbenv](https://github.com/sstephenson/rbenv))
+* [npm](https://www.npmjs.org/) for managing node packages
+* [bower](http://bower.io/) for managing web packages
 
-### Standard Libary Deps
+      npm install -g bower
+      
+* ember-cli
+
+      npm install -g ember-cli
+
+* [PhantomJS](http://phantomjs.org/) for running integration tests
+
+      npm install -g phantomjs
+      
+* [Bundler](http://bundler.io/) for managing Ruby gems
+
+      gem install bundler
+      
+
+### Standard Library Deps
 
 
 ## Installation
