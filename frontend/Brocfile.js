@@ -19,6 +19,11 @@ var app = new EmberApp();
 
 app.import('vendor/bootstrap/dist/js/bootstrap.js');
 app.import('vendor/bootstrap/dist/css/bootstrap.css');
+app.import('vendor/rails-csrf/dist/named-amd/main.js', {
+    'rails-csrf': [
+       'service'
+    ]
+});
 
 var mergeTrees  = require('broccoli-merge-trees');
 var pickFiles   = require('broccoli-static-compiler');
