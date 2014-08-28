@@ -5,7 +5,9 @@ export default Ember.ObjectController.extend({
     startEditing: function() {
       this.set('isEditing', true);
     },
-    stopEditing: function() {
+    cancelEditing: function() {
+      var product = this.get('model');
+      product.rollback();
       this.set('isEditing', false);
     },
     submit: function() {
@@ -14,10 +16,7 @@ export default Ember.ObjectController.extend({
 
       product.save().then(function() {
         self.set('isEditing', false);
-      },
-                         function() {
-                           alert('Ah, snap!');
-                         });
+      });
     }
   }
 });

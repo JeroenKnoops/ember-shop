@@ -27,7 +27,8 @@
               <label for="price">Price</label>
               {{input value=price class='form-control' type=number step='.01' placeholder="Enter price" id='price'}}
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="btn btn-default" {{action 'cancelEditing'}}>Cancel</div>
           </form>
         </div>
       {{else}}
@@ -36,7 +37,7 @@
           <h4 class="pull-right">${{price}}</h4>
           <h4>{{title}}</h4>
           <p>{{description}}</p>
-          <div {{action 'startEditing'}}>Edit Me</div>
+          <div class='btn btn-success' {{action 'startEditing'}}>Edit Me</div>
         </div>
       {{/if}}
       <div class="ratings">
