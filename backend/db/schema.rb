@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140729200117) do
     t.datetime "updated_at"
     t.text     "description"
     t.float    "price"
-    t.string   "image_url"
+    t.text     "image"
   end
 
   create_table "reviews", force: true do |t|
