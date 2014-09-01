@@ -17,9 +17,9 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
-app.import('vendor/bootstrap/dist/js/bootstrap.js');
-app.import('vendor/bootstrap/dist/css/bootstrap.css');
-app.import('vendor/rails-csrf/dist/named-amd/main.js', {
+app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/rails-csrf/dist/named-amd/main.js', {
     'rails-csrf': [
        'service'
     ]
@@ -27,7 +27,7 @@ app.import('vendor/rails-csrf/dist/named-amd/main.js', {
 
 var mergeTrees  = require('broccoli-merge-trees');
 var pickFiles   = require('broccoli-static-compiler');
-var extraAssets = pickFiles('vendor/bootstrap/dist/fonts', {
+var extraAssets = pickFiles('bower_components/bootstrap/dist/fonts', {
   srcDir: '/',
   files: ['**/*'],
   destDir: '/fonts'
