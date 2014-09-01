@@ -8,7 +8,7 @@ var Product = DS.Model.extend({
     return this.get('_data.reviews.length');
   }.property('reviews.length'),
   stars: DS.attr(),
-  imageUrl: DS.attr(),
+  image: DS.attr(),
   reviews: DS.hasMany('review', { async: true })
 });
 

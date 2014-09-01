@@ -27,12 +27,19 @@
               <label for="price">Price</label>
               {{input value=price class='form-control' type=number step='.01' placeholder="Enter price" id='price'}}
             </div>
+            <div class="form-group">
+              <label for="photo">File input</label>
+              {{view 'upload-file' file=image}}
+              {{#if image}}
+                <img {{bind-attr src=image}} class="img-thumbnail"/>
+              {{/if}}
+            </div>
             <button type="submit" class="btn btn-success">Submit</button>
             <div class="btn btn-default" {{action 'cancelEditing'}}>Cancel</div>
           </form>
         </div>
       {{else}}
-        <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+        <img {{bind-attr src=image}} class="img-responsive"/>
         <div class="caption-full">
           <h4 class="pull-right">${{price}}</h4>
           <h4>{{title}}</h4>
