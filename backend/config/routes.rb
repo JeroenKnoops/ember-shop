@@ -4,5 +4,6 @@ Rails.application.routes.draw do
       resources :products
       resources :reviews
     end
+    get :csrf, to: 'csrf#index'
   end
 end

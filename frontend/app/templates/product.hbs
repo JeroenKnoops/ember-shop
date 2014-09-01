@@ -12,12 +12,34 @@
   <div class="col-md-9">
 
     <div class="thumbnail">
-      <img class="img-responsive" src="http://placehold.it/800x300" alt="">
-      <div class="caption-full">
-        <h4 class="pull-right">${{price}}</h4>
-        <h4>{{title}}</h4>
-        <p>{{description}}</p>
-      </div>
+      {{#if isEditing}}
+        <div class="caption-full">
+          <form role="form" {{action 'submit' on='submit'}}>
+            <div class="form-group">
+              <label for="title">Title</label>
+              {{input value=title class='form-control' placeholder="Enter title" id='title' autofocus=true}}
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              {{textarea value=description class='form-control' placeholder="Enter description" id='description'}}
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              {{input value=price class='form-control' type=number step='.01' placeholder="Enter price" id='price'}}
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+            <div class="btn btn-default" {{action 'cancelEditing'}}>Cancel</div>
+          </form>
+        </div>
+      {{else}}
+        <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+        <div class="caption-full">
+          <h4 class="pull-right">${{price}}</h4>
+          <h4>{{title}}</h4>
+          <p>{{description}}</p>
+          <div class='btn btn-success' {{action 'startEditing'}}>Edit Me</div>
+        </div>
+      {{/if}}
       <div class="ratings">
         <p class="pull-right">{{number_of_reviews}} reviews</p>
         <p>
