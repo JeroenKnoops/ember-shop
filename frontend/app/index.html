@@ -13,13 +13,11 @@
     <link rel="stylesheet" href="assets/shop.css">
   </head>
   <body>
-    <script>
-      window.ShopENV = {{ENV}};
-      window.EmberENV = window.ShopENV.EmberENV;
-    </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/shop.js"></script>
     <script>
+      window.ShopENV = require('shop/config/environment')['default'];
+      window.EmberENV = window.ShopENV.EmberENV;
       window.Shop = require('shop/app')['default'].create(ShopENV.APP);
     </script>
   </body>

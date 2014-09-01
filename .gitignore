@@ -1,1 +1,3 @@
 *.swp
+backend/.ruby-gemset
+backend/.ruby-version
