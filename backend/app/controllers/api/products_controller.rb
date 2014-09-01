@@ -11,13 +11,15 @@ class Api::ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
 
-    product.update(product_params)
-
-    render json: product
+    if product.update(product_params)
+      render json: product
+    else
+      render json: { errors: product.errors }, status: :unprocessable_entity
+    end
   end
 
-private
+  private
   def product_params
-    params.require(:product).permit(:title, :description, :price, :image)
+    params.require(:product).permit(:title, :description, :price, :image, :stars)
   end
 end

@@ -15,10 +15,11 @@
       {{#if isEditing}}
         <div class="caption-full">
           <form role="form" {{action 'submit' on='submit'}}>
-            <div class="form-group">
-              <label for="title">Title</label>
-              {{input value=title class='form-control' placeholder="Enter title" id='title' autofocus=true}}
-            </div>
+              <div {{bind-attr class=':form-group validationErrors.title:has-error'}}>
+                <label for="title">Title</label>
+                {{input value=title class='form-control' placeholder="Enter title" id='title' autofocus=true}}
+                {{validationErrors.title}}
+              </div>
             <div class="form-group">
               <label for="description">Description</label>
               {{textarea value=description class='form-control' placeholder="Enter description" id='description'}}

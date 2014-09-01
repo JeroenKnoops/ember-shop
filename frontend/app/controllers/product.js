@@ -14,8 +14,13 @@ export default Ember.ObjectController.extend({
       var product = this.get('model');
       var self = this;
 
+      self.set('validationErrors', null);
+     
       product.save().then(function() {
         self.set('isEditing', false);
+      }, function(reason) {
+        self.set('validationErrors', reason.errors);
+        product.rollback();
       });
     }
   }
