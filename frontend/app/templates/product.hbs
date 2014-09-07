@@ -16,9 +16,11 @@
         <div class="caption-full">
           <form role="form" {{action 'submit' on='submit'}}>
               <div {{bind-attr class=':form-group validationErrors.title:has-error'}}>
-                <label for="title">Title</label>
+                <label for="title" class='control-label'>Title</label>
                 {{input value=title class='form-control' placeholder="Enter title" id='title' autofocus=true}}
-                {{validationErrors.title}}
+                {{#if validationErrors.title}}
+                  <div class='control-label'>{{validationErrors.title}}</div>
+                {{/if}}
               </div>
             <div class="form-group">
               <label for="description">Description</label>
