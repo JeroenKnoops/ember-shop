@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { sessions: 'sessions' }
   namespace :api do
     scope :v1 do
       resources :products

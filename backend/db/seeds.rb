@@ -12,6 +12,7 @@ require 'base64'
 CATEGORIES = %w(abstract animals business cats city food nightlife fashion people nature sports technics transport)
 
 Product.destroy_all
+User.destroy_all
 
 100.times do
   Product.create do |product|
@@ -37,3 +38,15 @@ Product.destroy_all
     end
   end
 end
+
+User.create([
+  {
+    email:                  'patrick@kabisa.nl',
+    password:               'secret',
+    password_confirmation:  'secret'
+  }, {
+    email:                  'jeroen@kabisa.nl',
+    password:               'secret',
+    password_confirmation:  'secret'
+  }
+])
