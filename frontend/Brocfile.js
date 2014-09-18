@@ -24,6 +24,8 @@ app.import('bower_components/rails-csrf/dist/named-amd/main.js', {
        'service'
     ]
 });
+app.import('vendor/ember-pusher/ember-pusher.js');
+app.import('bower_components/ember-pushable/lib/ember-pushable.js');
 
 var mergeTrees  = require('broccoli-merge-trees');
 var pickFiles   = require('broccoli-static-compiler');

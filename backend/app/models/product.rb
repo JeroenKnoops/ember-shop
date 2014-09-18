@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  include Pushable
 
   has_many :reviews, dependent: :destroy
 

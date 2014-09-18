@@ -13,6 +13,7 @@
     "ember-qunit-notifications": "0.0.4",
     "qunit": "~1.15.0",
     "bootstrap": "~3.2.0",
-    "rails-csrf": "~0.0.6"
+    "rails-csrf": "~0.0.6",
+    "ember-pushable": "~1.1.0"
   }
 }
