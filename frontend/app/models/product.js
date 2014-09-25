@@ -9,7 +9,11 @@ var Product = DS.Model.extend({
   }.property('reviews.length'),
   stars: DS.attr(),
   image: DS.attr(),
-  reviews: DS.hasMany('review', { async: true })
+  reviews: DS.hasMany('review', { async: true }),
+  category: DS.belongsTo('category'),
+  categoryName: function() {
+    return this.get('category.name');
+  }.property('category')
 });
 
 Product.reopenClass({

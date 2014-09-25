@@ -11,7 +11,14 @@ require 'base64'
 
 CATEGORIES = %w(abstract animals business cats city food nightlife fashion people nature sports technics transport)
 
+Category.destroy_all
 Product.destroy_all
+
+10.times do
+  Category.create do |category|
+    category.name = Faker::Commerce.department(1)
+  end
+end
 
 100.times do
   Product.create do |product|
@@ -25,6 +32,7 @@ Product.destroy_all
     url                 = 'http://lorempixel.com/320/150/%s/%d' % [CATEGORIES.sample, image_id]
 
     product.image       = 'data:image/jpeg;base64,' + Base64.encode64(open(url) { |io| io.read })
+    product.category = Category.all.sample
 
     #product.image_url = Faker::Lorem.word
     rand(1..10).times do

@@ -1,7 +1,7 @@
 class Api::ProductsController < ApplicationController
 
   def index
-    render json: Product.all
+    render json: Product.all.includes(:reviews, :category)
   end
 
   def show
