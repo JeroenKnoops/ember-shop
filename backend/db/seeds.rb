@@ -16,7 +16,7 @@ Product.destroy_all
 
 10.times do
   Category.create do |category|
-    category.name = Faker::Commerce.department(1)
+    category.name = Faker::Commerce.department
   end
 end
 

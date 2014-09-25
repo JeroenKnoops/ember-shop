@@ -1,6 +1,7 @@
 class Api::ProductsController < ApplicationController
 
   def index
+    sleep 3
     render json: Product.all.includes(:reviews, :category)
   end
 
