@@ -4,7 +4,7 @@
     <p class="lead">Shop Name</p>
     <div class="list-group">
     {{#each uniqCategories}}
-    <a href="#" class="list-group-item">{{name}}</a>
+    {{#link-to 'products' (query-params category=name) class='list-group-item'}}{{name}}{{/link-to}}
     {{/each}}
     </div>
   </div>
@@ -44,7 +44,7 @@
 
     <div class="row">
 
-      {{#each}}
+      {{#each filteredContent}}
         {{product-tile product=this}}
       {{/each}}
 
