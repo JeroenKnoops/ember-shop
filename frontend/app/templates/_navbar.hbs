@@ -12,7 +12,7 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
   <ul class="nav navbar-nav">
     {{#link-to 'about' tagName='li'}}<a href='#'>About</a>{{/link-to}}
-    {{#link-to 'products' tagName='li'}}<a href='#'>Products</a>{{/link-to}}
+    {{#link-to 'products' (query-params category='') tagName='li'}}<a href='#'>Products</a>{{/link-to}}
     <li><a href="#contact">Contact</a></li>
   </ul>
 </div>
