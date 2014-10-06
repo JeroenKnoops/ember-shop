@@ -19,7 +19,9 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+    // https://github.com/stefanpenner/ember-cli/issues/2174#issuecomment-57909339
+    contentSecurityPolicyHeader: 'Disabled-Content-Security-Policy'
   };
 
   if (environment === 'development') {
