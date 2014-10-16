@@ -16,15 +16,4 @@ var Product = DS.Model.extend({
   }.property('category')
 });
 
-Product.reopenClass({
-  FIXTURES: [
-    { id: 1,
-      title: 'Drop'
-  },
-    { id: 2,
-      title: 'Zuurstokken'
-  }
-  ]
-});
-
 export default Product;
